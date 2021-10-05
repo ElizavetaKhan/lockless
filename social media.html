@@ -4,311 +4,295 @@
 <meta charset="utf-8"> 
 <meta name="viewport" content="width=device-width, initial-scale=0"> 
 <style> 
-* { box-sizing: border-box; } 
+* {
+box-sizing: border-box;
+}
 
-.column { 
-	float: left; 
-	padding: 10px; 
-} 
-  
-.columnPost { 
-	float: left; 
-	padding: 10px; 
-} 
+.container {
+	display: flex;
+	margin: 0 -5px; 
+	max-width: 1900px; }
 
-@media only screen{
-	.empty { width: 20%; transform: rotate(90deg);}
-	.left {	width: 8%; height: 900px}
-	.tableTop {display:none;}
+@media screen  {
+	.h1, .h2, .h3, .h4, .h5, .h6, .h7, .c1, .phone, select {display:none;} 
+	.empty {flex: 1;}
+	.box1 {flex: 0.3;}
+	.box2 { margin: 0 10px; flex: 0.8;}
+	.box3 { flex: 1.8; margin: auto;} 
 	.none{
 	    text-align: center;
 		border-spacing: 0px 5px
-		margin: center;
-	}
+		margin: center;}
 	.logo {display:hidden;}
 	#header {
 		width: 60%;
 		background-color: #2A023C;
-		margin: auto;
-}
+		margin: auto;}
 } 
 
 
-@media only screen and (max-width:1200px){
-	.empty { width: 8%; transform: rotate(90deg);}
-	.left {	width: 8%; }
-	.tableTop {display:none;}
-	.none{
-	    text-align: center;
-		border-spacing: 0px 5px
-		margin: center;
-	}
-	.logo {display:hidden;}
+@media screen and (max-width:1200px){
+	.empty { flex: 0.6;}
+	.box1 {	flex:0.3 }
+	.box2 { margin: 0 10px; flex: 1.3;}
+	.box3 { flex: 2.8; margin: auto; } 
 	#header {
-		width: 60%;
+		width: 80%;
 		background-color: #2A023C;
-		margin-left:110px;
+		margin: auto;}
 }
-} 
 
-@media only screen and (max-width:1000px){
-	.empty { width: 5%; display:hidden;}
-	.tableTop {
-		display:initial;
-		margin:0%;
-		margin-left:4%;
-	}
-	.left {	display:none; }
-	.none {	display:none; }
+
+@media screen and (max-width:1024px){
+	.h1, .h2, .h3, .h4, .h5, .h6, .h7 {display:initial; flex:1; font-size:100%} 
+	.c1 {display: initial;}
+	.empty {flex: 0.1;}
+	.box2 { margin: 0 10px; flex: 0.8;}
+	.box3 { flex: 1.8; margin: auto; } 
+	.box1, .none{display:none; }
 	.logo {
-		position: absolute;
 		background-image: url("img/bg.png");	
-		background-size: 150px;
-		background-color
-		}
-	#header {display:none;}
+		background-size: 150px;}
+	#header {
+		width: 93%;
+		background-color: #2A023C;
+		margin: auto;}
+	select {display: initial; background-color: #FFC7C7; margin-left: 5%}
+	option.head {
+		selected:selected;
+		display:none;
+		disabled:disabled;}
 }
 
-@media only screen and (max-width:800px){
-	.empty { display:none;}
-	.tableTop {
-		display:initial;
-		margin:0%;
-		margin-left:0%;
-	}
-	.left {	display:none; }
-	.none {	display:none; }
-	.logo {
-		
-		background-image: url("img/bg.png");	
-		background-size: 120px;
-		}
-	#header {display:none;}
-}
 
-.right { 
-	width: 35%; 
-} 
-
-.middle {
-	width: 17%;
-}
-  
-.leftProfile { 
-	width: 15%; 
-	line-height: 7; 
-} 
-  
-  
-.rightPost { 
-	width: 85%; 
-	padding: 0; 
-  
-} 
-
-.row:after { 
-	content: ""; 
-	display: table; 
-	clear: both; 
+@media screen and (max-width:768px){
+	.h1, .h2, .h3, .h4, .h5, .h6,.h7 {display:initial; flex:1; font-size:80%}
+	.empty, .box1, .none {display:none;}
+	.box2 { margin: 0 10px; flex: 0.4;}
+	.box3 { flex: 0.8; margin: auto;} 
 }
  
  
-.fig {
-    text-align: center;
-	border-spacing: 0px 5px
-	margin: center;}
+@media screen and (max-width:620px){
+	.container {justify-content: center; flex-direction: column; }
+	.empty, .box1, .none, span {display:none;}
+	.box2 { margin: 0 10px; flex: 0.3;}
+	.box3 { flex: 0.6; margin: auto;} 
+	.phone {display: initial;}
+}
+ 
   
 .round { border-radius: 50%;} /* круглые фото */ 
 
 h4 { margin-bottom: 3px; } 
 
-#container { 
-	min-width: 1300px; /* Минимальная ширина контейнера */ 
-	max-width: 1900px; 
-   } 
-
 p.dline { line-height: 0.0;} /* расстояние между p*/
 
 .table_unlock {      
 	border-radius: 10px; /* закругленная таблица */
-	border: 1px solid #000;
-}​
-
-
+	border: 1px solid #000;}
 </style> 
 </head> 
 
 
 <body bgcolor="#000000" vlink="#FFFFCB" class="logo"> 
-	<div id="container"> 
-		<font style="color:#FFFFCB" face="Lucida Console"> 
-		
-		<div  id="header" class="table_unlock">
-			<img src="img/logo.png" width="115px">
-			<img src="img/name.png" width="200px">
-		</div>
-		
-		<table class="tableTop" cellpadding="6" cellspacing="0"> 
-			<tr>
-				<td class="table_unlock" style="background-color:#2A023C;"> Профиль <td>
-				<td class="table_unlock" style="background-color:#2A023C;"> Друзья <td> 
-				<td class="table_unlock" style="background-color:#2A023C;"> Новости <td> 
-				<td class="table_unlock" style="background-color:#2A023C;"> Сообщения <td> 
-				<td class="table_unlock" style="background-color:#2A023C;"> Группки <td> 
-				<td class="table_unlock" style="background-color:#2A023C;"> Фотографии <td> 
-				<td class="table_unlock" style="background-color:#2A023C;"> Аудиозаписи <td> 
-			</tr>
-		</table>
-		
-		
-	<div class="row">
-		
-		<div class="column empty">  </div>
-		
-		<div class="column left">
-			<p> Профиль </p>
-			<p> Друзья </p>
-			<p> Новости </p>
-			<p> Сообщения </p>
-			<p> Группки </p>
-			<p> Фотографии </p>
-			<p> Аудиозаписи </p> 
-		</div> 
-		
-		
-		<div class="column middle"> 
-			<div><p class="fig"><img src="https://www.thispersondoesnotexist.com/image?11631773870" width="60%" class="round" alt="фотография профиля">  </p></div>
-			
-			<table class="tableTop" cellpadding="6">
-				<tr> 
-					<td class="table_unlock" align="center" style="background-color:#2A023C;"><b>Написать сообщение</b></td>
-				</tr>
-				<tr> 
-					<td class="table_unlock" align="center" style="background-color:#2A023C;"><b>Добавить в друзья</b></td> 
-				</tr>
-				<tr><td class="table_unlock" align="center" style="background-color:#2A023C;"><b>Позвонить</b></td></tr>			
-			</table>
-				
-			<table class="none" cellpadding="6">
-				<tr> 
-					<td class="table_unlock" style="background-color:#2A023C;"><b>Написать сообщение</b></td>
-					<td class="table_unlock" style="background-color:#2A023C;"><b>Добавить в друзья</b></td> 
-				</tr>
-				<td colspan="2" class="table_unlock" style="background-color:#2A023C;"><b>Позвонить</b></td>
-			</table>
 
-			
-			<p class="dline"><small>Пожаловаться</small></p>
-			<p class="dline"><small>Отправить подарок</small></p>
-			
-			<table cellpadding="0" class="table_unlock" cellspacing="5" style="background-color:#2A023C;">
-				<td colspan="4" valign="top"><p><b>Друзья</b></p></td> </tr>
-				<tr>
-					<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round" </td>
-					<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round" </td>
-					<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round"> </td>
-					<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round"> </td>					
-				 </tr> 
-				<tr>
-					<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round"  </td>
-					<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round"  </td>
-					<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round"> </td>
-					<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round"> </td>					
-				 </tr> 				 
-				 
-			</table>
-			
-			<br></br>
-			<div>
-			<table class="table_unlock" cellspacing="5" style="background-color:#2A023C;"> 
-				<col style="width:22%">
-				<col style="width:78%">
-				<td colspan="4" valign="top"><p><b>Группки</b></p></td> </tr>
-				<tr>
-					<td> <img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round" </td>
-					<td> smth interesting so much </td>
-				</tr>
-								<tr>
-					<td> <img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round" </td>
-					<td> smth interesting so much </td>
-				</tr>
-								<tr>
-					<td> <img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round" </td>
-					<td> smth interesting so much </td>
-				</tr>
-			</table>
-			</div>
-		</div> 
-		
-		
-		
-		<div class="column right" > 
-			<font color="FFC7C7"><h4><i>СТАТУС: МЕЧТАЮ О ЛУЧШЕЙ ЖИЗНИ</i></h4> </font>
-			 <fieldset disabled class="table_unlock" style="background-color:#2A023C;">
-			<table >
-				<tr> <td><b>Имя:</b></td> <td>Саша Кудник</td> </tr> 
-				<tr>  <td><b>День рождения:</b></td> <td>01.01.1994</td> </tr> 
-				<tr>  <td><b>Родной город:</b></td> <td><a href="https://en.wikipedia.org/wiki/Detroit">Детройт</td></tr> 
-				<tr> <td><b>Место работы:</b></td> <td>менеджер связей </td></tr> 
-				<tr> <td><b>Жизненная позиция:</b></td> <td>случайности не случайны </td> </tr>
-			</table>
-			</fieldset>
-			
-			<br></br>
-			
-			<table  cellpadding="4" class="table_unlock" style="background-color:#2A023C;">
-				<td colspan="4" valign="top"><p><b>Фотографии</b></p></td> </tr>
-				<tr> 
-					<td class="fig"><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="90%"<td> 
-					<td class="fig"><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="90%"<td> 
-					<td class="fig"><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="90%"<td> 
-					<td class="fig"><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="90%"<td> 
-				</tr>
-			</table>
-			
-			<br></br>			
-			
-			<div class="columnPost leftProfile" > 
-				<img  src="https://www.thispersondoesnotexist.com/image?11631773870" width="100%" class="round" alt="фотография профиля"> 
-			</div> 
-			<div class="columnPost rightPost"> 
-				<h3>Саша Кудник</h3> 
-				<p>Короче, В Детройте <i>не так хорошо</i>, как вы думаете.</p> 
-				<img src="https://vk.com/sticker/1-70-512-9" width="23%"> 
-			</div> 
-			
-			
-			<div class="columnPost leftProfile" > 
-				<img src="https://www.thispersondoesnotexist.com/image?11631773870" width="100%" class="round" alt="фотография профиля"> 
-			</div> 
-			<div class="columnPost rightPost"> 
-				<h3>Саша Кудник</h3> 
-				<p>Меня часто спрашивают в чем состоит моя работа, но я рады, что мой босс ни разу не поинтересовался. На самом деле, менеджер связей - это <i>то, что я делала</i> и делаю в данный момент, <i>а не то, чем я занимаюсь сейчас</i>. Моя текущая компания - это то, чему я посвящаю большую часть своего времени. И я надеюсь, что вы тоже. Так что это скорее вопрос о том, <i>какой твой босс</i>.</p> 
-				<img src="https://vk-free-stickers.ru/wp-content/uploads/2019/10/animplat-e1570457540703.png" width="23%"> 
-			</div> 
-			
-			
-			<div class="columnPost leftProfile" > 
-				<img src="https://www.thispersondoesnotexist.com/image?11631773870" width="100%" class="round" alt="фотография профиля"> 
-			</div>   
-			<div class="columnPost rightPost"> <h3>Саша Кудник</h3> 
-				<p><i>день рождения и новый год</i> – это все-таки разные праздники.</p> 
-				<img src="http://vkclub.su/_data/stickers/holidaytoad/sticker_vk_holidaytoad_022.png" width="23%"> 
-			</div> 
-			
-			<div class="columnPost leftProfile" > 
-				<img src="https://www.thispersondoesnotexist.com/image?11631773870" width="100%" class="round" alt="фотография профиля"> 
-			</div> 
-			<div class="columnPost rightPost"> <h3>Саша Кудник</h3> 
-				<a href="https://imgflip.com/i/5n6fcv"><img src="https://i.imgflip.com/5n6fcv.jpg" width="50%" title="made at imgflip.com"/></a><div><a href="https://imgflip.com/memegenerator">from Imgflip Meme Generator</a></div> 
-			</div> 
-			
-			
-		</div> 
-			
-		<div class="column empty"> 
-	
+<font style="color:#FFFFCB" face="Lucida Console"> 
+
+	<div  id="header" class="table_unlock">
+		<img src="img/logo.png" width="115px">
+		<img src="img/name.png" width="200px">
 	</div>
-	
-	</font> 
+
+	<select name='takeation' bgcolor="000000">
+		<option class='head'>МЕНЮ</option>
+		<option value='Action 1'>Профиль</option>
+		<option value='Action 2'>Друзья</option>
+		<option value='Action 3'>Новости</option>
+		<option value='Action 4'>Сообщения</option>
+		<option value='Action 5'>Группки</option>
+		<option value='Action 6'>Фотографии</option>
+		<option value='Action 7'>Аудиозаписи</option>
+	</select>
+		
+	<div class="phone"><p style="text-align: center;"><img src="https://www.thispersondoesnotexist.com/image?11631773870" width="32%" class="round" alt="фотография профиля">  </p></div>
+		
+			
+	<div class="container" id="container"> 
+		
+		<div class="empty"></div>
+		
+		<div class="box1">
+				<p> Профиль </p>
+				<p> Друзья </p>
+				<p> Новости </p>
+				<p> Сообщения </p>
+				<p> Группки </p>
+				<p> Фотографии </p>
+				<p> Аудиозаписи </p> 
+		</div> 
+			
+			
+		<div class="box2"> 
+				<span><p style="text-align: center;"><img src="https://www.thispersondoesnotexist.com/image?11631773870" width="60%" class="round" alt="фотография профиля">  </p></span>
+				
+				<div align="center"><table class="c1" cellpadding="6">
+					<tr> 
+						<td class="table_unlock" align="center" style="background-color:#2A023C;"><b>Написать сообщение</b></td>
+					</tr>
+					<tr> 
+						<td class="table_unlock" align="center" style="background-color:#2A023C;"><b>Добавить в друзья</b></td> 
+					</tr>
+					<tr><td class="table_unlock" align="center" style="background-color:#2A023C;"><b>Позвонить</b></td></tr>			
+				</table></div>
+					
+				<table class="none" cellpadding="6">
+					<tr> 
+						<td class="table_unlock" style="background-color:#2A023C;"><b>Написать сообщение</b></td>
+						<td class="table_unlock" style="background-color:#2A023C;"><b>Добавить в друзья</b></td> 
+					</tr>
+						<td colspan="2" class="table_unlock" style="background-color:#2A023C;"><b>Позвонить</b></td>
+				</table>
+
+				<span><div>
+				<p class="dline"><small>Пожаловаться</small></p>
+				<p class="dline"><small>Отправить подарок</small></p></div>
+				
+				<table cellpadding="0" class="table_unlock" cellspacing="5" style="background-color:#2A023C;">
+					<td colspan="4" valign="top"><p><b>Друзья</b></p></td> </tr>
+					<tr>
+						<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round" </td>
+						<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round" </td>
+						<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round"> </td>
+						<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round"> </td>					
+					 </tr> 
+					<tr>
+						<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round"  </td>
+						<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round"  </td>
+						<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round"> </td>
+						<td><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round"> </td>					
+					 </tr> 				 
+					 
+				</table></span>
+				
+				<br></br>
+
+				<span><table class="table_unlock" cellspacing="5" style="background-color:#2A023C;"> 
+					<col style="width:22%">
+					<col style="width:78%">
+					<td colspan="4" valign="top"><p><b>Группки</b></p></td> </tr>
+					<tr>
+						<td> <img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round" </td>
+						<td> smth interesting so much </td>
+					</tr>
+									<tr>
+						<td> <img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round" </td>
+						<td> smth interesting so much </td>
+					</tr>
+									<tr>
+						<td> <img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="100%" class="round" </td>
+						<td> smth interesting so much </td>
+					</tr>
+				</table></span>
+		</div> 
+			
+			
+		<div class="box3" > 
+				<font color="FFC7C7"><h4><i>СТАТУС: МЕЧТАЮ О ЛУЧШЕЙ ЖИЗНИ</i></h4> </font>
+				 <fieldset disabled class="table_unlock" style="background-color:#2A023C;">
+				<table >
+					<tr> <td><b>Имя:</b></td> <td>Саша Кудник</td> </tr> 
+					<tr>  <td><b>День рождения:</b></td> <td>01.01.1994</td> </tr> 
+					<tr>  <td><b>Родной город:</b></td> <td><a href="https://en.wikipedia.org/wiki/Detroit">Детройт</td></tr> 
+					<tr> <td><b>Место работы:</b></td> <td>менеджер связей </td></tr> 
+					<tr> <td><b>Жизненная позиция:</b></td> <td>случайности не случайны </td> </tr>
+				</table>
+				</fieldset>
+				
+				<br></br>
+				
+				<table  cellpadding="4" class="table_unlock" style="background-color:#2A023C;">
+					<td colspan="4" valign="top"><p><b>Фотографии</b></p></td> </tr>
+					<tr> 
+						<td style="text-align: center;"><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="90%"<td> 
+						<td style="text-align: center;"><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="90%"<td> 
+						<td style="text-align: center;"><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="90%"<td> 
+						<td style="text-align: center;"><img  src="https://img07.rl0.ru/afisha/e300x-i/daily.afisha.ru/uploads/images/b/52/b5207053a1ba41849f1c98b165117c2b.png" width="90%"<td> 
+					</tr>
+				</table>
+				
+				<br></br>			
+				
+				<table style=" border-spacing: 11px 1px;">
+				<col style="width:20%">
+				<col style="width:80%">
+					<tr>
+						<td rowspan="2" align= "right" ><img  src="https://www.thispersondoesnotexist.com/image?11631773870" width="80%" class="round" alt="фотография профиля"> </td>
+						<td><b>Саша Кудник</b></td> 
+					</tr>
+					<tr>
+						<td>Короче, В Детройте <i>не так хорошо</i>, как вы думаете.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><img src="https://vk.com/sticker/1-70-512-9" width="26%"></td>
+					</tr>
+				</table> 
+				
+				<br></br>
+				
+				<table style="border-spacing: 11px 11px;">
+				<col style="width:20%">
+				<col style="width:80%">
+					<tr>
+						<td rowspan="2" align= "right" valign="top"><img  src="https://www.thispersondoesnotexist.com/image?11631773870" width="80%" class="round" alt="фотография профиля"> </td>
+						<td><b>Саша Кудник</b></td> 
+					</tr>
+					<tr>
+						<td>Меня часто спрашивают в чем состоит моя работа, но я рады, что мой босс ни разу не поинтересовался. На самом деле, менеджер связей - это <i>то, что я делала</i> и делаю в данный момент, <i>а не то, чем я занимаюсь сейчас</i>. Моя текущая компания - это то, чему я посвящаю большую часть своего времени. И я надеюсь, что вы тоже. Так что это скорее вопрос о том, <i>какой твой босс</i>.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><img src="https://vk-free-stickers.ru/wp-content/uploads/2019/10/animplat-e1570457540703.png" width="26%"></td>
+					</tr>
+				</table> 
+				
+				<br></br>
+				
+				<table style=" border-spacing: 11px 1px;">
+				<col style="width:20%">
+				<col style="width:80%">
+					<tr>
+						<td rowspan="2" align= "right"><img  src="https://www.thispersondoesnotexist.com/image?11631773870" width="80%" class="round" alt="фотография профиля"> </td>
+						<td><b>Саша Кудник</b></td> 
+					</tr>
+					<tr>
+						<td><i>день рождения и новый год</i> – это все-таки разные праздники.</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><img src="http://vkclub.su/_data/stickers/holidaytoad/sticker_vk_holidaytoad_022.png" width="26%"> </td>
+					</tr>
+				</table> 			
+				
+				<br></br>
+				
+				<table style=" border-spacing: 11px 11px;">
+				<col style="width:20%">
+				<col style="width:80%">
+					<tr>
+						<td rowspan="2" align= "right" valign="top"><img  src="https://www.thispersondoesnotexist.com/image?11631773870" width="80%" class="round" alt="фотография профиля"> </td>
+						<td><b>Саша Кудник</b></td> 
+					</tr>
+					<tr>
+						<td><a href="https://imgflip.com/i/5n6fcv"><img src="https://i.imgflip.com/5n6fcv.jpg" width="60%" title="made at imgflip.com"/></a><div><a href="https://imgflip.com/memegenerator">from Imgflip Meme Generator</a></div> </td>
+					</tr>
+				</table> 		
+				
+		</div> 
+				
+		<div class="empty"></div>
+
+	</div>
+</font> 
 </body>
